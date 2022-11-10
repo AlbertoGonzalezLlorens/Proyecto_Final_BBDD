@@ -95,3 +95,20 @@ foreign key (id_usuario) references usuarios(id_usuario) on delete cascade on up
 foreign key (id_habitacion) references habitaciones(id_habitacion) on delete cascade on update cascade
 );
 
+drop table if exists agregan_favoritos;
+create table agregan_favoritos(
+id_usuario int,
+id_hotel int,
+primary key (id_usuario, id_hotel),
+foreign key (id_usuario) references usuarios(id_usuario) on delete cascade on update cascade,
+foreign key (id_habitacion) references hoteles(id_hotel) on delete cascade on update cascade
+);
+
+drop table if exists comentan;
+create table comentan(
+id_usuario int,
+id_hotel int,
+primary key (id_usuario, id_hotel),
+foreign key (id_usuario) references usuarios(id_usuario) on delete cascade on update cascade,
+foreign key (id_habitacion) references hoteles(id_hotel) on delete cascade on update cascade
+);
