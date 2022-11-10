@@ -101,7 +101,7 @@ id_usuario int,
 id_hotel int,
 primary key (id_usuario, id_hotel),
 foreign key (id_usuario) references usuarios(id_usuario) on delete cascade on update cascade,
-foreign key (id_habitacion) references hoteles(id_hotel) on delete cascade on update cascade
+foreign key (id_hotel) references hoteles(id_hotel) on delete cascade on update cascade
 );
 
 drop table if exists comentan;
@@ -110,5 +110,14 @@ id_usuario int,
 id_hotel int,
 primary key (id_usuario, id_hotel),
 foreign key (id_usuario) references usuarios(id_usuario) on delete cascade on update cascade,
-foreign key (id_habitacion) references hoteles(id_hotel) on delete cascade on update cascade
+foreign key (id_hotel) references hoteles(id_hotel) on delete cascade on update cascade
+);
+
+drop table if exists buscan;
+create table buscan(
+id_usuario int,
+id_hotel int,
+primary key (id_usuario, id_hotel),
+foreign key (id_usuario) references usuarios(id_usuario) on delete cascade on update cascade,
+foreign key (id_hotel) references hoteles(id_hotel) on delete cascade on update cascade
 );
